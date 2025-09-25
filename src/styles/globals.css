@@ -1,0 +1,2549 @@
+/* Estilos globales para la aplicación */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f8fafc;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: none;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-subtitle {
+  text-align: right;
+}
+
+.qa-badge {
+  background: rgba(255,255,255,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Navigation */
+.navigation {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  flex: 1;
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-link:hover {
+  background-color: #ecf0f1;
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+.nav-link.active {
+  background-color: #3498db;
+  color: white;
+  border-bottom-color: #2980b9;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 0;
+}
+
+/* Home Page */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+}
+
+.hero-approach {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.benefit-card {
+  background: white;
+  padding: 1.2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c, #9b59b6, #1abc9c);
+  opacity: 0.8;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.15);
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.benefit-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  display: inline-block;
+  padding: 0.6rem;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.benefit-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0.6rem 0 0.3rem 0;
+  color: #2c3e50;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.benefit-description {
+  color: #64748b;
+  line-height: 1.3;
+  font-size: 0.8rem;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* Colores específicos para cada ícono de beneficio */
+.benefit-card:nth-child(1) .benefit-icon {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+.benefit-card:nth-child(1):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+.benefit-card:nth-child(2):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.benefit-card:nth-child(3):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.benefit-card:nth-child(4) .benefit-icon {
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.1));
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+}
+
+.benefit-card:nth-child(4):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+}
+
+.benefit-card:nth-child(5) .benefit-icon {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.2);
+}
+
+.benefit-card:nth-child(5):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.3);
+}
+
+.benefit-card:nth-child(6) .benefit-icon {
+  background: linear-gradient(135deg, rgba(26, 188, 156, 0.1), rgba(22, 160, 133, 0.1));
+  box-shadow: 0 4px 15px rgba(26, 188, 156, 0.2);
+}
+
+.benefit-card:nth-child(6):hover .benefit-icon {
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer p {
+  opacity: 0.8;
+}
+
+/* Services Page */
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+.services-carousel-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ecf0f1 100%);
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.carousel-content {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.carousel-arrow {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  z-index: 10;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-arrow-left {
+  position: absolute;
+  left: 0;
+}
+
+.carousel-arrow-right {
+  position: absolute;
+  right: 0;
+}
+
+/* Service Carousel Specific Styles */
+.service-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.service-carousel-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.service-carousel-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  justify-content: flex-start;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Service Carousel Cards */
+.service-carousel-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  flex: 0 0 calc(33.333% - 0.8rem); /* Cada tarjeta ocupa exactamente 1/3 del ancho */
+  width: calc(33.333% - 0.8rem);
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.service-carousel-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  border-color: #3498db;
+}
+
+.service-card-icon {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.service-card-header h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.service-card-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-content .service-description {
+  color: #5d6d7e;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+.service-card-footer {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.service-card-arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5rem;
+  color: #3498db;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.service-carousel-card:hover .service-card-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+  color: #2980b9;
+}
+
+.service-card-icon {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.service-card-title {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.service-card-description {
+  color: #5d6d7e;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.service-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Details Button */
+.details-button {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+.details-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9 0%, #1f5582 100%);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #bdc3c7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  background: #3498db;
+  transform: scale(1.2);
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+.modal-header {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.modal-hero {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #2c3e50;
+  position: relative;
+}
+
+.modal-hero-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.modal-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.modal-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+/* Modal Layout de 3 columnas como en la imagen */
+.modal-columns-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.modal-column {
+  background: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.column-header {
+  background: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.column-icon {
+  font-size: 1.2rem;
+  color: #4285f4;
+}
+
+.column-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.column-content {
+  padding: 1rem;
+}
+
+/* Estilos para items de roles */
+.role-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.role-check {
+  font-size: 1rem;
+  color: #27ae60;
+  margin-top: 0.1rem;
+}
+
+.role-details {
+  flex: 1;
+}
+
+.role-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+.role-description {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  line-height: 1.3;
+}
+
+/* Estilos para herramientas */
+.tool-category {
+  margin-bottom: 1rem;
+}
+
+.tool-category-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.tool-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+}
+
+.tool-name {
+  font-size: 0.85rem;
+  color: #2c3e50;
+  line-height: 1.3;
+}
+
+/* Estilos para includes */
+.include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.include-check {
+  font-size: 1rem;
+  color: #9b59b6;
+  margin-top: 0.1rem;
+}
+
+.include-text {
+  font-size: 0.85rem;
+  color: #2c3e50;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Sección KPIs como en la imagen */
+.kpi-section {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8ecef;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.kpi-header {
+  background: #f8fafc;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.kpi-icon {
+  font-size: 1.2rem;
+  color: #4285f4;
+}
+
+.kpi-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.kpi-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  padding: 1.5rem;
+}
+
+.kpi-card {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.kpi-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Los colores de los iconos ahora se manejan inline desde los datos */
+
+.kpi-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+}
+
+.kpi-card-desc {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  line-height: 1.3;
+}
+
+/* Specific styling for different card types */
+.team-card {
+  border-left: 4px solid #3498db;
+}
+
+.team-card .mini-card-icon {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+}
+
+.tool-card {
+  border-left: 4px solid #2980b9;
+}
+
+.tool-card .mini-card-icon {
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+}
+
+.include-card {
+  border-left: 4px solid #27ae60;
+}
+
+.include-card .mini-card-icon {
+  background: linear-gradient(135deg, #f0fff0 0%, #e6ffe6 100%);
+}
+
+.benefit-card {
+  border-left: 4px solid #e74c3c;
+}
+
+.benefit-card .mini-card-icon {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+}
+
+/* Special styling for benefits section */
+.benefits-wrapper {
+  background: linear-gradient(135deg, #fff5f5 0%, #fef7f7 100%);
+  border: 2px solid #f1c2c2;
+}
+
+.benefits-wrapper .modal-section-title {
+  background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+}
+
+/* Modal Layout en filas organizadas verticalmente */
+.modal-rows-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-row {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.row-header {
+  background: white;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid #e8ecef;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.row-icon {
+  font-size: 1.4rem;
+  color: #4285f4;
+}
+
+.row-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.row-content {
+  padding: 1.5rem;
+}
+
+/* Estilos para la sección de herramientas en layout de filas */
+.tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tool-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para la sección de incluye en layout de filas */
+.includes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* Mejoras para las tarjetas KPI en layout de filas */
+.modal-row .kpi-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0;
+}
+
+.modal-row .kpi-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.modal-row .kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: #4285f4;
+}
+
+/* Tools Carousel Styles */
+.tools-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tools-carousel-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 1rem;
+}
+
+.tools-carousel-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.tool-carousel-card {
+  flex: 1;
+  min-width: calc(50% - 0.5rem);
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tool-carousel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  border-color: #4285f4;
+}
+
+.tool-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #4285f4;
+}
+
+.tool-card-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.tool-card-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.tools-carousel-arrow {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  color: #4285f4;
+}
+
+.tools-carousel-arrow:hover {
+  background: #4285f4;
+  color: white;
+  border-color: #4285f4;
+  transform: scale(1.1);
+}
+
+.tools-carousel-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.tools-carousel-arrow:disabled:hover {
+  background: #f1f5f9;
+  color: #94a3b8;
+  transform: none;
+}
+
+.tools-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tools-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tools-indicator.active {
+  background: #4285f4;
+  transform: scale(1.2);
+}
+
+/* Responsive styles for Tools Carousel */
+@media (max-width: 768px) {
+  .tools-carousel {
+    gap: 0.5rem;
+  }
+  
+  .tool-carousel-card {
+    padding: 1rem;
+  }
+  
+  .tool-card-icon {
+    font-size: 2rem;
+  }
+  
+  .tool-card-title {
+    font-size: 1rem;
+  }
+  
+  .tool-card-description {
+    font-size: 0.8rem;
+  }
+  
+  .tools-carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools-carousel {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tools-carousel-container {
+    order: 2;
+  }
+  
+  .tools-carousel-arrow {
+    order: 1;
+    position: static;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .tools-carousel-arrow-left {
+    order: 1;
+  }
+  
+  .tools-carousel-arrow-right {
+    order: 3;
+  }
+  
+  .tools-carousel-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tool-carousel-card {
+    min-width: 100%;
+  }
+}
+
+.modal-row .kpi-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.kpi-card-content {
+  flex: 1;
+}
+
+.modal-row .kpi-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+}
+
+.modal-row .kpi-card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Modal Cards */
+.modal-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e8ecef;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.modal-card-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #ecf0f1 100%);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.modal-card-icon {
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modal-card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.modal-card-badge {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.modal-card-content {
+  padding: 1.5rem;
+}
+
+/* Team Section */
+.team-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.team-role-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
+}
+
+.role-icon {
+  font-size: 1.2rem;
+  background: white;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.role-text {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+/* Tools Section */
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: #f0f8ff;
+  border-radius: 8px;
+  border-left: 3px solid #2980b9;
+}
+
+.tool-icon {
+  font-size: 1.2rem;
+  background: white;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tool-text {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+/* Includes Section */
+.includes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: #f0fff0;
+  border-radius: 8px;
+  border-left: 3px solid #27ae60;
+}
+
+.include-icon {
+  font-size: 1.2rem;
+  background: white;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 0.1rem;
+}
+
+.include-text {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Benefits Section */
+.benefits-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #fef7f7 100%);
+  border: 2px solid #f1c2c2;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);
+}
+
+.benefit-icon {
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 0.1rem;
+}
+
+.benefit-text {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.4;
+  flex: 1;
+  font-weight: 500;
+}
+
+.modal-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-section li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #ecf0f1;
+  color: #34495e;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.modal-section li:last-child {
+  border-bottom: none;
+}
+
+.modal-section li:before {
+  content: "✓";
+  color: #27ae60;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+}
+
+.modal-footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #ecf0f1;
+}
+
+.modal-contact-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.modal-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Home Info Section */
+.home-info {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c);
+  opacity: 0.8;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(52, 152, 219, 0.15);
+  border-color: rgba(52, 152, 219, 0.3);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  display: inline-block;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.info-card:hover .info-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.info-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem 0 1rem 0;
+  color: #2c3e50;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.info-description {
+  color: #64748b;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Colores específicos para cada tarjeta de información */
+.info-card:nth-child(1) .info-icon {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+.info-card:nth-child(1):hover .info-icon {
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+}
+
+.info-card:nth-child(2) .info-icon {
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.1));
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+}
+
+.info-card:nth-child(2):hover .info-icon {
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+}
+
+.info-card:nth-child(3) .info-icon {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.2);
+}
+
+.info-card:nth-child(3):hover .info-icon {
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.3);
+}
+
+.info-card:nth-child(4) .info-icon {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+}
+
+.info-card:nth-child(4):hover .info-icon {
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.info-card:nth-child(5) .info-icon {
+  background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+}
+
+.info-card:nth-child(5):hover .info-icon {
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+}
+
+/* Benefits Page Styles */
+.benefits-page .hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.benefits-page .hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.benefits-page .hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sección de contacto eliminada */
+
+/* Asegurar 3 columnas en desktop */
+@media (min-width: 1025px) {
+  .benefits .benefits-grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .benefits .benefits-grid {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-template-rows: auto auto;
+    gap: 1.5rem 1.2rem;
+  }
+  
+  .benefit-card {
+    height: 220px;
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .benefit-title {
+    font-size: 1rem;
+  }
+  
+  .benefit-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .header-subtitle {
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+  }
+  
+  .nav-link {
+    padding: 0.8rem 1rem;
+  }
+  
+  .benefits .benefits-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 1.2rem;
+  }
+  
+  /* Info cards responsive */
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .info-card {
+    min-height: 220px;
+    padding: 1.5rem 1.2rem;
+  }
+  
+  .info-icon {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 2.2rem;
+  }
+  
+  .info-title {
+    font-size: 1.1rem;
+  }
+  
+  .info-description {
+    font-size: 0.9rem;
+  }
+  
+  .benefit-card {
+    padding: 1.5rem 1.2rem;
+    height: 240px;
+  }
+  
+  .benefit-icon {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 2.2rem;
+  }
+  
+  .benefit-title {
+    font-size: 1rem;
+  }
+  
+  .benefit-description {
+    font-size: 0.85rem;
+  }
+
+  /* Carousel Mobile */
+  .carousel-container {
+    padding: 0 20px;
+  }
+
+  .carousel-content {
+    gap: 1rem;
+  }
+
+  .service-carousel-card {
+    min-width: 280px;
+    width: 280px;
+    height: 380px;
+    padding: 1.5rem;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-arrow-left {
+    left: -10px;
+  }
+
+  .carousel-arrow-right {
+    right: -10px;
+  }
+
+  /* Modal Mobile */
+  .modal-backdrop {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+  }
+
+  .modal-hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-hero-icon {
+    font-size: 3rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-content-grid-main {
+    gap: 1rem;
+  }
+
+  .modal-section-title {
+    padding: 1rem;
+    font-size: 1.1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .section-badge {
+    margin-left: 0;
+  }
+
+  .modal-mini-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .mini-card {
+    padding: 0.8rem;
+  }
+
+  /* Responsive para el modal de 3 columnas */
+  .modal-columns-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .modal-column {
+    min-height: auto;
+  }
+  
+  .modal-column h4 {
+    font-size: 0.95rem;
+  }
+  
+  .role-item {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .include-item {
+    padding: 0.8rem;
+  }
+
+  /* Responsive para el modal layout de filas */
+  .modal-rows-layout {
+    gap: 1rem;
+  }
+  
+  .row-content {
+    padding: 1rem;
+  }
+  
+  .row-header {
+    padding: 1rem;
+  }
+  
+  .row-title {
+    font-size: 1rem;
+  }
+  
+  .tool-items-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .includes-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .modal-row .kpi-cards {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .modal-row .kpi-card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  
+  .modal-row .kpi-card-icon {
+    font-size: 2rem;
+  }
+  
+  /* KPIs responsive */
+  .kpi-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .kpi-card {
+    padding: 1.2rem;
+  }
+  
+  .kpi-card-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-content {
+    justify-content: center;
+  }
+
+  .service-carousel-card {
+    min-width: 260px;
+    width: 260px;
+    height: 360px;
+    padding: 1.2rem;
+  }
+
+  .service-card-title {
+    font-size: 1.1rem;
+  }
+
+  .service-card-description {
+    font-size: 0.85rem;
+  }
+
+  .service-card-icon {
+    font-size: 3rem;
+  }
+}
+
+/* Tech Stack Page */
+.tech-stack-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ecf0f1 100%);
+}
+
+.tech-stack-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+.tech-stack-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Tech Stack Card Styles */
+.tech-stack-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e8ed;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-stack-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tech-stack-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.tech-stack-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.tech-stack-icon {
+  font-size: 3rem;
+  min-width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-stack-info {
+  flex: 1;
+}
+
+.tech-stack-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.tech-stack-description {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tech-stack-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.tech-stack-button:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46a3 100%);
+  transform: translateY(-1px);
+}
+
+.tech-stack-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.tech-stack-button:hover .tech-stack-arrow {
+  transform: translateX(3px);
+}
+
+/* Tech Stack Modal Styles */
+.tech-stack-modal {
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.tech-stack-details {
+  margin-top: 2rem;
+}
+
+.tech-detail-section {
+  margin-bottom: 2rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.tech-detail-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-detail-icon {
+  font-size: 1.5rem;
+}
+
+.tech-detail-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-detail-item {
+  background: #ffffff;
+  color: #4a5568;
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 2.5rem;
+}
+
+.tech-detail-item:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Special styling for methodology items with emojis */
+.tech-detail-section .tech-detail-item {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+/* For single benefit item, make it stand out */
+.tech-detail-section:has(.tech-detail-item:only-child) .tech-detail-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tech-detail-section:has(.tech-detail-item:only-child) .tech-detail-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive for Tech Stack */
+@media (max-width: 768px) {
+  .tech-stack-card-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .tech-stack-icon {
+    font-size: 2.5rem;
+  }
+  
+  .tech-stack-title {
+    font-size: 1.3rem;
+  }
+  
+  .tech-stack-description {
+    font-size: 0.9rem;
+  }
+  
+  .tech-stack-button {
+    width: 100%;
+  }
+  
+  .tech-detail-items {
+    justify-content: center;
+  }
+  
+  .tech-stack-modal {
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+  
+  .tech-detail-section {
+    padding: 1rem;
+  }
+  
+  .tech-detail-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Methodology Page */
+.methodology-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #ecf0f1 100%);
+}
+
+.methodology-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px;
+}
+
+.methodology-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.methodology-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.methodology-description {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.benefit-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e8ed;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.benefit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  min-width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-content p {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.methodology-highlight {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.highlight-icon {
+  font-size: 3rem;
+}
+
+.highlight-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.highlight-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Responsive for Methodology */
+@media (max-width: 768px) {
+  .methodology-description {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.7rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .benefit-item {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .benefit-icon {
+    align-self: center;
+  }
+  
+  .highlight-card {
+    margin: 0 1rem;
+    padding: 2rem;
+  }
+  
+  .highlight-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .highlight-content p {
+    font-size: 1rem;
+  }
+}
+
+/* TMAP Roadmap Styles */
+.methodology-main-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.methodology-highlight {
+  flex: 0 0 400px;
+}
+
+.tmap-roadmap {
+  flex: 1;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.roadmap-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.3;
+}
+
+.roadmap-container {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.roadmap-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 180px;
+}
+
+.step-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.step-1 { background: linear-gradient(135deg, #74c0fc, #339af0); }
+.step-2 { background: linear-gradient(135deg, #51cf66, #37b24d); }
+.step-3 { background: linear-gradient(135deg, #8ce99a, #69db7c); }
+.step-4 { background: linear-gradient(135deg, #4dabf7, #228be6); }
+.step-5 { background: linear-gradient(135deg, #364fc7, #1c7ed6); }
+
+.step-icon {
+  font-size: 2rem;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  min-height: 2.4rem;
+}
+
+.step-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.step-details li {
+  margin-bottom: 0.3rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.step-details li:before {
+  content: '•';
+  color: #64748b;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.roadmap-line {
+  position: absolute;
+  top: 50px;
+  left: 80px;
+  right: 80px;
+  height: 4px;
+  background: #e2e8f0;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.line-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #74c0fc, #51cf66, #8ce99a, #4dabf7, #364fc7);
+  border-radius: 2px;
+  width: 100%;
+}
+
+.step-connector {
+  position: absolute;
+  top: -6px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.step-connector-1 { left: 0%; border-color: #74c0fc; }
+.step-connector-2 { left: 25%; border-color: #51cf66; }
+.step-connector-3 { left: 50%; border-color: #8ce99a; }
+.step-connector-4 { left: 75%; border-color: #4dabf7; }
+.step-connector-5 { left: 100%; border-color: #364fc7; }
+
+/* Responsive para TMAP Roadmap */
+@media (max-width: 1200px) {
+  .methodology-main-content {
+    flex-direction: column;
+  }
+  
+  .methodology-highlight {
+    flex: none;
+    width: 100%;
+  }
+  
+  .roadmap-steps {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .roadmap-step {
+    flex: 0 1 calc(50% - 1rem);
+    max-width: none;
+  }
+  
+  .roadmap-line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tmap-roadmap {
+    padding: 1.5rem;
+  }
+  
+  .roadmap-title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .roadmap-step {
+    flex: 1 1 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .step-circle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .step-icon {
+    font-size: 1.8rem;
+  }
+  
+  .step-title {
+    font-size: 0.95rem;
+  }
+  
+  .step-details {
+    font-size: 0.8rem;
+  }
+}
