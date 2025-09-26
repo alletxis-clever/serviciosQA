@@ -1,152 +1,376 @@
-# QA Services Website
+# 🚀 QA Services Website - CleverIT
 
-Este proyecto es una página web dedicada a ofrecer información sobre los servicios de aseguramiento de calidad (QA) proporcionados por CleverIT. La aplicación está construida utilizando React y TypeScript con Create React App, y está organizada en varias secciones para facilitar la navegación y el acceso a la información.
+Una moderna aplicación web que presenta los servicios de aseguramiento de calidad (QA) de CleverIT, construida con las mejores prácticas de desarrollo y un enfoque técnico robusto basado en TMAP (Test Management Approach).
 
-## Tecnologías Utilizadas
+## ✨ Características Principales
 
-- **React 18** - Biblioteca de JavaScript para construir interfaces de usuario
-- **TypeScript** - Superset de JavaScript que añade tipado estático
-- **React Router DOM** - Enrutamiento para aplicaciones React
-- **Lucide React** - Librería de iconos para React
-- **CSS3** - Estilos personalizados organizados por componentes y páginas
+- 🎯 **Servicios QA Completos**: QAaaS, DevTestOps, Pruebas Funcionales/No Funcionales, Equipos Dedicados, QA con IA
+- 🛠️ **Stack Tecnológico Avanzado**: Herramientas modernas para todas las necesidades de QA
+- 📋 **Metodología TMAP**: Framework estructurado y adaptable para gestión de pruebas
+- 🎨 **Diseño Responsive**: Experiencia optimizada en todos los dispositivos
+- ♿ **Accesibilidad**: Cumple estándares ARIA y navegación por teclado
+- 🧪 **Testing Robusto**: 14 pruebas automatizadas con 100% de éxito
+- 🛡️ **Error Handling**: Error Boundaries para manejo resiliente de errores
 
-## Estructura del Proyecto
+## 🔧 Stack Tecnológico
+
+### **Core Technologies**
+- **React 18** - Biblioteca moderna con Concurrent Features
+- **TypeScript** - Tipado estático para mayor robustez
+- **React Router DOM v6** - Enrutamiento declarativo con accesibilidad
+- **Lucide React** - Iconografía consistente y moderna
+
+### **Calidad de Código**
+- **ESLint** - Análisis estático de código con reglas personalizadas
+- **Prettier** - Formateo automático de código
+- **Jest & React Testing Library** - Testing moderno y accesible
+
+### **Desarrollo**
+- **Create React App** - Configuración optimizada sin eject
+- **CSS3 Moderno** - Flexbox, Grid, Custom Properties
+- **Environment Configuration** - Configuración flexible por entorno
+
+## 📁 Estructura del Proyecto
 
 ```
 serviciosQA/
-├── public/
-│   └── index.html                # Archivo HTML principal
-├── src/
-│   ├── components/
-│   │   ├── Header.tsx            # Componente para el encabezado de la página
-│   │   ├── Navigation.tsx        # Componente para la barra de navegación
-│   │   ├── ServiceCard.tsx       # Componente para mostrar información de servicios
-│   │   ├── ServiceCarousel.tsx   # Carrusel de servicios
-│   │   ├── ServiceModal.tsx      # Modal para detalles de servicios
-│   │   ├── TechStackCard.tsx     # Tarjeta para tecnologías
-│   │   ├── TechStackModal.tsx    # Modal para stack tecnológico
-│   │   └── ToolsCarousel.tsx     # Carrusel de herramientas
-│   ├── pages/
-│   │   ├── Home.tsx              # Página de inicio
-│   │   ├── Services.tsx          # Página de servicios
-│   │   ├── QaaS.tsx              # Página de "Quality as a Service"
-│   │   ├── DevTestOps.tsx        # Página de "DevTestOps"
-│   │   ├── TechStack.tsx         # Página de stack tecnológico
-│   │   ├── Benefits.tsx          # Página de beneficios
-│   │   ├── Methodology.tsx       # Página de metodología
-│   │   └── Contact.tsx           # Página de contacto
-│   ├── styles/
-│   │   ├── globals.css           # Estilos globales
-│   │   ├── components.css        # Estilos para componentes
-│   │   └── pages.css             # Estilos para páginas
-│   ├── assets/
-│   │   └── fonts/                # Fuentes utilizadas en el proyecto
-│   ├── utils/
-│   │   └── constants.ts          # Constantes utilizadas en la aplicación
-│   ├── App.tsx                   # Componente principal de la aplicación
-│   └── index.tsx                 # Punto de entrada de la aplicación
-├── package.json                  # Configuración del proyecto para npm
-├── tsconfig.json                 # Configuración de TypeScript
-└── README.md                     # Documentación del proyecto
+├── 🌐 public/
+│   └── index.html                    # Archivo HTML principal
+├── 📦 src/
+│   ├── 🧱 components/
+│   │   ├── ErrorBoundary.tsx         # 🛡️ Manejo robusto de errores
+│   │   ├── Header.tsx                # 📍 Encabezado con branding CleverIT
+│   │   ├── Navigation.tsx            # 🧭 Navegación accesible con ARIA
+│   │   ├── ServiceCard.tsx           # 📋 Tarjetas de servicios QA
+│   │   ├── ServiceCarousel.tsx       # 🎠 Carrusel interactivo de servicios
+│   │   ├── ServiceModal.tsx          # 📱 Modal detallado con focus trap
+│   │   ├── TechStackCard.tsx         # 🛠️ Tarjetas de tecnologías
+│   │   ├── TechStackModal.tsx        # 📊 Modal de stack tecnológico
+│   │   └── ToolsCarousel.tsx         # 🔧 Carrusel de herramientas QA
+│   ├── 📄 pages/
+│   │   ├── Home.tsx                  # 🏠 Página principal con propuesta de valor
+│   │   ├── Services.tsx              # 🚀 Catálogo completo de servicios QA
+│   │   ├── QaaS.tsx                  # 🛡️ Quality as a Service
+│   │   ├── DevTestOps.tsx            # 🔄 Integración DevOps + QA
+│   │   ├── TechStack.tsx             # 🛠️ Stack tecnológico especializado
+│   │   ├── Benefits.tsx              # ⭐ Beneficios para clientes
+│   │   ├── Methodology.tsx           # 📋 Metodología TMAP detallada
+│   │   └── Contact.tsx               # 📞 Información de contacto
+│   ├── 🧪 __tests__/                 # Suite completa de pruebas
+│   │   ├── App.test.tsx              # ✅ Tests del componente principal
+│   │   ├── components/
+│   │   │   ├── ErrorBoundary.test.tsx # 🛡️ Tests de manejo de errores
+│   │   │   └── Navigation.test.tsx    # 🧭 Tests de navegación
+│   │   └── pages/
+│   │       └── Home.test.tsx         # 🏠 Tests de página principal
+│   ├── 🎨 styles/
+│   │   ├── globals.css               # 🌍 Estilos globales + accesibilidad
+│   │   ├── components.css            # 🧱 Estilos de componentes
+│   │   └── pages.css                 # 📄 Estilos específicos de páginas
+│   ├── 📂 assets/
+│   │   └── fonts/                    # 🔤 Tipografías del proyecto
+│   ├── 🔧 utils/
+│   │   └── constants.ts              # 📊 Datos y constantes tipadas
+│   ├── App.tsx                       # 🎯 Componente raíz con Error Boundaries
+│   ├── index.tsx                     # 🚀 Punto de entrada de la aplicación
+│   └── setupTests.ts                 # ⚙️ Configuración del entorno de testing
+├── ⚙️  Configuración
+│   ├── .env                          # 🌐 Variables de entorno (dominio personalizado)
+│   ├── .eslintrc.json                # 📏 Configuración ESLint
+│   ├── .prettierrc.json              # 💄 Configuración Prettier
+│   ├── .prettierignore               # 🚫 Archivos excluidos de formateo
+│   ├── package.json                  # 📦 Dependencias y scripts
+│   ├── tsconfig.json                 # 📘 Configuración TypeScript
+│   └── README.md                     # 📖 Documentación del proyecto
 ```
 
-## Prerrequisitos
+## 🏗️ Arquitectura y Patrones
+
+- **🛡️ Error Boundaries**: Manejo resiliente de errores en múltiples capas
+- **♿ Accesibilidad**: Cumplimiento ARIA, navegación por teclado, semántica HTML
+- **🧪 Testing Strategy**: Cobertura integral con Testing Library patterns
+- **📱 Responsive Design**: Mobile-first con breakpoints optimizados
+- **🔄 State Management**: Props drilling optimizado con contexto local
+- **🎨 CSS Architecture**: Módulos organizados por responsabilidad
+
+## 📋 Prerrequisitos
 
 Antes de comenzar, asegúrate de tener instalado:
 
-- **Node.js** (versión 16 o superior)
-- **npm** (normalmente viene incluido con Node.js)
+- **Node.js** (versión 16 o superior) - Runtime JavaScript
+- **npm** (versión 7+) - Gestor de paquetes
+- **Git** - Control de versiones
 
-## Instalación
+## 🚀 Instalación y Configuración
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone https://github.com/alletxis-clever/serviciosQA.git
-   cd serviciosQA
-   ```
+### 1. **Clona el repositorio**
+```bash
+git clone https://github.com/alletxis-clever/serviciosQA.git
+cd serviciosQA
+```
 
-2. **Instala las dependencias:**
-   ```bash
-   npm install
-   ```
+### 2. **Instala las dependencias**
+```bash
+npm install
+```
 
-## Comandos Disponibles
-
-En el directorio del proyecto, puedes ejecutar los siguientes comandos:
-
-### `npm start`
-
-Ejecuta la aplicación en modo de desarrollo.
-Abre [http://localhost:3000](http://localhost:3000) para verla en el navegador.
-
-La página se recargará automáticamente cuando hagas cambios en el código.
-También verás errores de lint en la consola.
-
-### `npm run build`
-
-Construye la aplicación para producción en la carpeta `build`.
-Optimiza React para el mejor rendimiento, minimiza el código y los nombres de archivos incluyen hashes para el cacheo.
-
-### `npm test`
-
-Inicia el corredor de pruebas en modo interactivo.
-Consulta la sección sobre [ejecutar pruebas](https://facebook.github.io/create-react-app/docs/running-tests) para más información.
-
-### `npm run eject`
-
-**Nota: esta es una operación de un solo sentido. ¡Una vez que ejecutes `eject`, no podrás volver atrás!**
-
-Si no estás satisfecho con la herramienta de construcción y las opciones de configuración, puedes "eject" en cualquier momento.
-
-## Inicio Rápido
-
-Para levantar el proyecto de desarrollo:
+### 3. **Configuración del dominio personalizado (opcional)**
+El proyecto incluye configuración para usar un dominio personalizado en desarrollo:
 
 ```bash
-# 1. Instalar dependencias (solo la primera vez)
-npm install
+# El archivo .env ya está configurado con:
+HOST=servicesqa.local
+PORT=3000
+```
 
-# 2. Iniciar el servidor de desarrollo
+Para usar el dominio personalizado, añade esta línea a tu archivo `/etc/hosts`:
+```
+127.0.0.1 servicesqa.local
+```
+
+### 4. **Verifica la instalación**
+```bash
+# Ejecuta los tests para verificar que todo funciona
+npm test -- --watchAll=false
+
+# Ejecuta el linter
+npm run lint
+
+# Inicia el servidor de desarrollo
 npm start
 ```
 
-El proyecto se abrirá automáticamente en tu navegador en `http://localhost:3000`.
+## 📋 Scripts Disponibles
 
-## Configuración de TypeScript
+### 🚀 **Desarrollo**
+```bash
+# Inicia el servidor de desarrollo
+npm start
+# Abre http://localhost:3000 o http://servicesqa.local:3000
+```
 
-El proyecto utiliza TypeScript con la configuración optimizada para React. El archivo `tsconfig.json` está preconfigurado con las mejores prácticas para desarrollo con Create React App.
+### 🧪 **Testing**
+```bash
+# Ejecuta todas las pruebas
+npm test
 
-## Funcionalidades Principales
+# Ejecuta las pruebas una sola vez (ideal para CI)
+npm test -- --watchAll=false
 
-- **Navegación por secciones:** Home, Services, QaaS, DevTestOps, TechStack, Benefits, Methodology, y Contact
-- **Componentes interactivos:** Carruseles, modales, y tarjetas de información
-- **Diseño responsive:** Adaptado para dispositivos móviles y desktop
-- **Routing:** Navegación entre páginas utilizando React Router
-- **Iconografía:** Integración con Lucide React para iconos consistentes
+# Ejecuta las pruebas con cobertura
+npm test -- --coverage
+```
 
-## Estructura de Estilos
+### 🔍 **Calidad de Código**
+```bash
+# Ejecuta ESLint para detectar problemas
+npm run lint
 
-Los estilos están organizados en tres archivos principales:
+# Ejecuta ESLint y corrige problemas automáticamente
+npm run lint:fix
 
-- `globals.css`: Estilos globales y reset CSS
-- `components.css`: Estilos específicos para componentes reutilizables
-- `pages.css`: Estilos específicos para cada página
+# Formatea el código con Prettier
+npm run format
 
-## Contribuir
+# Verifica el formateo sin modificar archivos
+npm run format:check
+```
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+### 🏗️ **Construcción**
+```bash
+# Construye la aplicación para producción
+npm run build
+# Genera archivos optimizados en la carpeta build/
+```
 
-## Licencia
+### ⚠️ **Avanzado (No Recomendado)**
+```bash
+# Expone la configuración interna de Create React App
+npm run eject
+# ⚠️ Esta operación es irreversible
+```
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+## 🧪 Testing Strategy
 
-## Autor
+El proyecto incluye una suite completa de pruebas:
 
-**Alletxis Villaparedes** - CleverIT
+- **✅ 14 pruebas** distribuidas en 4 suites
+- **🧱 Component Testing**: Tests unitarios de componentes críticos
+- **📄 Page Testing**: Tests de integración de páginas principales
+- **🛡️ Error Boundary Testing**: Cobertura de manejo de errores
+- **♿ Accessibility Testing**: Verificación de patrones accesibles
+
+### Cobertura Actual:
+- **App Component**: Tests de renderizado y navegación
+- **Navigation**: Tests de accesibilidad y roles ARIA
+- **Home Page**: Tests de contenido y enlaces
+- **Error Boundary**: Tests de captura y recuperación de errores
+
+## ⚡ Inicio Rápido
+
+### Desarrollo Local
+```bash
+# Clona e instala
+git clone https://github.com/alletxis-clever/serviciosQA.git
+cd serviciosQA
+npm install
+
+# Verifica que todo esté funcionando
+npm run lint && npm test -- --watchAll=false
+
+# Inicia el servidor de desarrollo
+npm start
+```
+
+🌐 **Accede a la aplicación:**
+- Local: `http://localhost:3000`
+- Dominio personalizado: `http://servicesqa.local:3000` (si configuraste /etc/hosts)
+
+## 🛠️ Configuración Técnica
+
+### **TypeScript**
+Configuración strict habilitada con:
+- `noImplicitAny`: true
+- `strictNullChecks`: true
+- Integración completa con React 18
+
+### **ESLint + Prettier**
+- Reglas personalizadas para React y TypeScript
+- Formateo automático en save
+- Integración con Testing Library rules
+
+### **Testing Environment**
+- Jest configurado con jsdom
+- React Testing Library para tests accesibles
+- Setup automático con `@testing-library/jest-dom`
+
+## 🎯 Funcionalidades del Negocio
+
+### **Servicios QA Showcase**
+1. **🛡️ QAaaS** - Quality as a Service integrado
+2. **🔄 DevTestOps** - Integración CI/CD con testing
+3. **🔍 Testing Especializado** - Funcional y No Funcional
+4. **👥 Equipos Dedicados** - Células QA para proyectos complejos
+5. **🤖 QA con IA** - Automatización inteligente y predictiva
+
+### **Stack Tecnológico Detallado**
+- **Pruebas Funcionales**: Selenium, Cypress, Appium, BrowserStack
+- **Pruebas No Funcionales**: JMeter, K6, LoadRunner
+- **CI/CD Testing**: Jenkins, Azure DevOps, Docker
+- **Quality Control**: SonarQube, análisis estático
+- **IA Aplicada**: Testim, Mabl, Applitools, ChatGPT APIs
+
+### **Metodología TMAP**
+Roadmap completo de adopción organizacional con 5 fases:
+1. Preparación y Diagnóstico
+2. Diseño del Framework QA  
+3. Implementación Piloto
+4. Escalamiento y Optimización
+5. Madurez Organizacional
+
+## 🎨 Arquitectura de Estilos
+
+```
+styles/
+├── globals.css      # Base styles, CSS reset, accessibility
+├── components.css   # Reusable component styles  
+└── pages.css        # Page-specific styles
+```
+
+**Características:**
+- 📱 **Mobile-first** responsive design
+- 🎯 **CSS Custom Properties** para consistencia
+- ♿ **Accessibility-focused** con focus states y ARIA
+- 🌈 **Color system** coherente con brand CleverIT
+
+## 🔧 Guía de Desarrollo
+
+### **Estructura de Commits**
+Utilizamos [Conventional Commits](https://www.conventionalcommits.org/):
+
+```bash
+# Nuevas funcionalidades
+git commit -m "feat(services): add QA with AI service modal"
+
+# Corrección de bugs  
+git commit -m "fix(navigation): resolve ARIA labels in mobile menu"
+
+# Mejoras de código
+git commit -m "refactor(components): optimize ServiceCarousel performance"
+
+# Tests
+git commit -m "test(pages): add Home page accessibility tests"
+
+# Documentación
+git commit -m "docs(readme): update installation instructions"
+```
+
+### **Estándares de Código**
+- ✅ **Tests obligatorios** para nuevos componentes
+- 🔍 **ESLint passing** antes de commit
+- 💄 **Prettier formatting** automático
+- ♿ **Accessibility compliance** en componentes interactivos
+- 📝 **TypeScript strict** sin any implícito
+
+### **Workflow de Contribución**
+1. **Fork** el repositorio
+2. **Crea una rama** descriptiva: `git checkout -b feature/nombre-descriptivo`
+3. **Desarrolla** siguiendo los estándares
+4. **Ejecuta tests**: `npm test -- --watchAll=false`
+5. **Verifica linting**: `npm run lint`
+6. **Commit** con mensaje conventional
+7. **Push** y crea **Pull Request**
+
+## 📊 Métricas del Proyecto
+
+- **📝 Líneas de código**: ~8,000+ líneas
+- **🧱 Componentes**: 12 componentes reutilizables
+- **📄 Páginas**: 8 páginas principales
+- **🧪 Tests**: 14 pruebas automatizadas
+- **♿ Accesibilidad**: Nivel AA compliance
+- **📱 Responsive**: 5 breakpoints optimizados
+- **⚡ Performance**: Optimizado para Core Web Vitals
+
+## 🚀 Deployment
+
+### **Preparación para Producción**
+```bash
+# Verifica calidad antes del deploy
+npm run lint:fix
+npm test -- --watchAll=false
+npm run build
+
+# Verifica que el build sea exitoso
+npm run serve  # Si tienes serve instalado globalmente
+```
+
+### **Variables de Entorno**
+```bash
+# Desarrollo
+HOST=servicesqa.local
+PORT=3000
+
+# Producción (agregar según necesidad)
+REACT_APP_API_URL=https://api.cleverit.com
+REACT_APP_ENVIRONMENT=production
+```
+
+## 📞 Soporte y Contacto
+
+- **🏢 Empresa**: CleverIT - Servicios de QA
+- **👨‍💻 Desarrollador**: Alletxis Villaparedes
+- **📧 Email**: info@cleverit.com
+- **📱 Teléfono**: +54 11 1234-5678
+- **🌐 Sitio Web**: [Propuesta de Servicios QA](http://servicesqa.local:3000)
+
+## 📄 Licencia
+
+Este proyecto está bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+**🎯 Construido con excelencia técnica para CleverIT**  
+*Asegurando la calidad desde la arquitectura hasta el producto final* 🛡️
 
 
 
