@@ -1,57 +1,59 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-h1, h2, h3 {
-    color: #333;
+h1,
+h2,
+h3 {
+  color: #333;
 }
 
 .header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .navigation {
-    background-color: #f8f9fa;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
+  background-color: #f8f9fa;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .service-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .service-card h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .service-card p {
-    color: #666;
+  color: #666;
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }

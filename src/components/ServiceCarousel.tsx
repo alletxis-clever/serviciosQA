@@ -6,9 +6,11 @@ interface ServiceCarouselProps {
   onServiceClick: (service: QAService) => void;
 }
 
-const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ onServiceClick }) => {
+const ServiceCarousel: React.FC<ServiceCarouselProps> = ({
+  onServiceClick,
+}) => {
   const [currentPage, setCurrentPage] = useState(0);
-  
+
   // Página 0: servicios 0,1,2 (primeros 3)
   // Página 1: servicios 3,4 (últimos 2)
   const getServicesForPage = (page: number) => {
@@ -20,42 +22,36 @@ const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ onServiceClick }) => 
   };
 
   const nextSlide = () => {
-    setCurrentPage((prevPage) => 
-      prevPage === 0 ? 1 : prevPage
-    );
+    setCurrentPage(prevPage => (prevPage === 0 ? 1 : prevPage));
   };
 
   const prevSlide = () => {
-    setCurrentPage((prevPage) => 
-      prevPage === 1 ? 0 : prevPage
-    );
-  };
-
-  const truncateText = (text: string, maxLength: number = 130): string => {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength).trim() + '...';
+    setCurrentPage(prevPage => (prevPage === 1 ? 0 : prevPage));
   };
 
   return (
     <div className="service-carousel">
-      <button 
-        className="carousel-arrow carousel-arrow-left" 
+      <button
+        className="carousel-arrow carousel-arrow-left"
         onClick={prevSlide}
         disabled={currentPage === 0}
-        aria-label="Servicios anteriores"
+        aria-label="Ver servicios anteriores"
+        type="button"
+        tabIndex={currentPage === 0 ? -1 : 0}
       >
         &#8249;
+        <span className="sr-only">Anterior</span>
       </button>
-      
+
       <div className="service-carousel-container">
-        <div 
+        <div
           className="service-carousel-wrapper"
-          style={{ 
-            transition: 'all 0.3s ease-in-out'
+          style={{
+            transition: 'all 0.3s ease-in-out',
           }}
         >
           {getServicesForPage(currentPage).map((service, idx) => (
-            <div 
+            <div
               key={service.id}
               className="service-carousel-card"
               style={{ backgroundColor: service.backgroundColor }}
@@ -66,9 +62,7 @@ const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ onServiceClick }) => 
                 <h3>{service.title}</h3>
               </div>
               <div className="service-card-content">
-                <p className="service-description">
-                  {service.description}
-                </p>
+                <p className="service-description">{service.description}</p>
               </div>
               <div className="service-card-footer">
                 <div className="service-card-arrow">→</div>
@@ -78,18 +72,39 @@ const ServiceCarousel: React.FC<ServiceCarouselProps> = ({ onServiceClick }) => 
         </div>
       </div>
 
-      <button 
-        className="carousel-arrow carousel-arrow-right" 
+      <button
+        className="carousel-arrow carousel-arrow-right"
         onClick={nextSlide}
         disabled={currentPage === 1}
-        aria-label="Siguientes servicios"
+        aria-label="Ver siguientes servicios"
+        type="button"
+        tabIndex={currentPage === 1 ? -1 : 0}
       >
         &#8250;
+        <span className="sr-only">Siguiente</span>
       </button>
-      
-      <div className="carousel-indicators">
-        <span className={`indicator ${currentPage === 0 ? 'active' : ''}`}></span>
-        <span className={`indicator ${currentPage === 1 ? 'active' : ''}`}></span>
+
+      <div
+        className="carousel-indicators"
+        role="tablist"
+        aria-label="Indicadores de páginas de servicios"
+      >
+        <button
+          className={`indicator ${currentPage === 0 ? 'active' : ''}`}
+          onClick={() => setCurrentPage(0)}
+          aria-label="Ir a la primera página de servicios"
+          aria-selected={currentPage === 0}
+          role="tab"
+          type="button"
+        ></button>
+        <button
+          className={`indicator ${currentPage === 1 ? 'active' : ''}`}
+          onClick={() => setCurrentPage(1)}
+          aria-label="Ir a la segunda página de servicios"
+          aria-selected={currentPage === 1}
+          role="tab"
+          type="button"
+        ></button>
       </div>
     </div>
   );

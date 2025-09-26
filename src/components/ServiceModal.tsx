@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { QAService } from '../utils/constants';
 import ToolsCarousel from './ToolsCarousel';
 
@@ -8,7 +8,33 @@ interface ServiceModalProps {
   onClose: () => void;
 }
 
-const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose }) => {
+const ServiceModal: React.FC<ServiceModalProps> = ({
+  service,
+  isOpen,
+  onClose,
+}) => {
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      // Focus trap: focus the modal when it opens
+      const modal = document.querySelector('.modal-content');
+      if (modal) {
+        (modal as HTMLElement).focus();
+      }
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen || !service) return null;
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,7 +58,12 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
     if (text.includes('docker') || text.includes('kubernetes')) return '🐳';
     if (text.includes('jenkins') || text.includes('github')) return '🔄';
     if (text.includes('sonar')) return '📊';
-    if (text.includes('testim') || text.includes('mabl') || text.includes('functionize')) return '🤖';
+    if (
+      text.includes('testim') ||
+      text.includes('mabl') ||
+      text.includes('functionize')
+    )
+      return '🤖';
     if (text.includes('applitools')) return '👁️';
     if (text.includes('chatgpt') || text.includes('ai')) return '🧠';
     if (text.includes('mlflow') || text.includes('tensorflow')) return '🔬';
@@ -40,24 +71,42 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
   };
 
   return (
-    <div className="modal-backdrop" onClick={handleBackdropClick}>
-      <div className="modal-content">
-        <button className="modal-close" onClick={onClose}>
-          ✕
+    <div
+      className="modal-backdrop"
+      onClick={handleBackdropClick}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
+      <div className="modal-content" tabIndex={-1}>
+        <button
+          className="modal-close"
+          onClick={onClose}
+          aria-label={`Cerrar detalles de ${service.title}`}
+          type="button"
+        >
+          ✕<span className="sr-only">Cerrar modal</span>
         </button>
-        
+
         <div className="modal-header">
-          <div className="modal-hero" style={{ backgroundColor: service.backgroundColor }}>
+          <div
+            className="modal-hero"
+            style={{ backgroundColor: service.backgroundColor }}
+          >
             <div className="modal-hero-icon">{service.icon}</div>
-            <h2 className="modal-title">{service.title}</h2>
-            <p className="modal-subtitle">{service.description}</p>
+            <h2 id="modal-title" className="modal-title">
+              {service.title}
+            </h2>
+            <p id="modal-description" className="modal-subtitle">
+              {service.description}
+            </p>
           </div>
         </div>
-        
+
         <div className="modal-body">
           {/* Layout en filas organizadas verticalmente */}
           <div className="modal-rows-layout">
-            
             {/* Fila 1: Equipo & Roles */}
             <div className="modal-row">
               <div className="row-header">
@@ -70,7 +119,9 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
                     <div className="role-check">✅</div>
                     <div className="role-details">
                       <div className="role-title">{role.split('(')[0]}</div>
-                      <div className="role-description">{role.includes('(') ? `(${role.split('(')[1]}` : ''}</div>
+                      <div className="role-description">
+                        {role.includes('(') ? `(${role.split('(')[1]}` : ''}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -84,7 +135,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
                 <h3 className="row-title">Herramientas</h3>
               </div>
               <div className="row-content">
-                <ToolsCarousel 
+                <ToolsCarousel
                   tools={service.tools}
                   getToolIcon={getToolIcon}
                 />
@@ -119,7 +170,12 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, isOpen, onClose })
                 <div className="kpi-cards">
                   {service.kpis.map((kpi, index) => (
                     <div key={index} className="kpi-card">
-                      <div className="kpi-card-icon" style={{ color: kpi.color }}>{kpi.icon}</div>
+                      <div
+                        className="kpi-card-icon"
+                        style={{ color: kpi.color }}
+                      >
+                        {kpi.icon}
+                      </div>
                       <div className="kpi-card-content">
                         <div className="kpi-card-title">{kpi.title}</div>
                         <div className="kpi-card-desc">{kpi.description}</div>

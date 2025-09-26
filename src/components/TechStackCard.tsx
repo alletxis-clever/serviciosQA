@@ -6,7 +6,10 @@ interface TechStackCardProps {
   onClick: (techStack: TechStack) => void;
 }
 
-const TechStackCard: React.FC<TechStackCardProps> = ({ techStack, onClick }) => {
+const TechStackCard: React.FC<TechStackCardProps> = ({
+  techStack,
+  onClick,
+}) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onClick(techStack);
@@ -18,7 +21,7 @@ const TechStackCard: React.FC<TechStackCardProps> = ({ techStack, onClick }) => 
   };
 
   return (
-    <div 
+    <div
       className="tech-stack-card"
       style={{ backgroundColor: techStack.backgroundColor }}
       onClick={handleClick}

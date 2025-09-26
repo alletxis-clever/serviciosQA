@@ -7,9 +7,9 @@ const Methodology: React.FC = () => {
         <div className="hero-content">
           <h1 className="hero-title">📋 Metodología</h1>
           <p className="hero-description">
-            En Cleverit aseguramos la calidad aplicando TMAP (Test Management Approach), 
-            un marco estructurado y adaptable que nos permite entregar valor de forma 
-            progresiva en cada proyecto.
+            En Cleverit aseguramos la calidad aplicando TMAP (Test Management
+            Approach), un marco estructurado y adaptable que nos permite
+            entregar valor de forma progresiva en cada proyecto.
           </p>
         </div>
       </section>
@@ -19,9 +19,9 @@ const Methodology: React.FC = () => {
           <div className="methodology-content">
             <div className="methodology-intro">
               <p className="methodology-description">
-                TMAP asegura que todas las actividades de prueba se planifiquen, organicen, 
-                ejecuten y controlen de manera adecuada, garantizando resultados confiables 
-                y medibles en cada proyecto.
+                TMAP asegura que todas las actividades de prueba se planifiquen,
+                organicen, ejecuten y controlen de manera adecuada, garantizando
+                resultados confiables y medibles en cada proyecto.
               </p>
             </div>
 
@@ -32,35 +32,49 @@ const Methodology: React.FC = () => {
                   <div className="benefit-icon">🔍</div>
                   <div className="benefit-content">
                     <h3>Enfoque en riesgos</h3>
-                    <p>Priorizamos las pruebas en lo que realmente impacta al negocio.</p>
+                    <p>
+                      Priorizamos las pruebas en lo que realmente impacta al
+                      negocio.
+                    </p>
                   </div>
                 </div>
                 <div className="benefit-item">
                   <div className="benefit-icon">📋</div>
                   <div className="benefit-content">
                     <h3>Proceso estructurado</h3>
-                    <p>Planificación, ejecución y control claros y repetibles.</p>
+                    <p>
+                      Planificación, ejecución y control claros y repetibles.
+                    </p>
                   </div>
                 </div>
                 <div className="benefit-item">
                   <div className="benefit-icon">🛠️</div>
                   <div className="benefit-content">
                     <h3>Toolkit completo</h3>
-                    <p>Checklists, ejemplos prácticos, técnicas y procedimientos listos para aplicar.</p>
+                    <p>
+                      Checklists, ejemplos prácticos, técnicas y procedimientos
+                      listos para aplicar.
+                    </p>
                   </div>
                 </div>
                 <div className="benefit-item">
                   <div className="benefit-icon">🔄</div>
                   <div className="benefit-content">
                     <h3>Flexible y adaptativo</h3>
-                    <p>Funciona en Agile, Waterfall, DevOps, proyectos de desarrollo o mantenimiento.</p>
+                    <p>
+                      Funciona en Agile, Waterfall, DevOps, proyectos de
+                      desarrollo o mantenimiento.
+                    </p>
                   </div>
                 </div>
                 <div className="benefit-item">
                   <div className="benefit-icon">⚡</div>
                   <div className="benefit-content">
                     <h3>Identificación temprana</h3>
-                    <p>Detectamos riesgos y problemas desde fases iniciales, reduciendo costos y retrabajo.</p>
+                    <p>
+                      Detectamos riesgos y problemas desde fases iniciales,
+                      reduciendo costos y retrabajo.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -73,22 +87,28 @@ const Methodology: React.FC = () => {
                   <div className="highlight-content">
                     <h3>Beneficio clave</h3>
                     <p>
-                      Un framework de QA robusto, consistente y alineado con los objetivos 
-                      de calidad del proyecto, garantizando resultados confiables y medibles.
+                      Un framework de QA robusto, consistente y alineado con los
+                      objetivos de calidad del proyecto, garantizando resultados
+                      confiables y medibles.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="tmap-roadmap">
-                <h2 className="roadmap-title">Roadmap de Adopción de TMAP en una Organización</h2>
+                <h2 className="roadmap-title">
+                  Roadmap de Adopción de TMAP en una Organización
+                </h2>
                 <div className="roadmap-container">
                   <div className="roadmap-steps">
                     <div className="roadmap-step">
                       <div className="step-circle step-1">
                         <div className="step-icon">🔍</div>
                       </div>
-                      <h3 className="step-title">Preparación<br/>y Diagnóstico</h3>
+                      <h3 className="step-title">
+                        Preparación
+                        <br />y Diagnóstico
+                      </h3>
                       <div className="step-details">
                         <ul>
                           <li>Evaluación inicial</li>
@@ -102,7 +122,11 @@ const Methodology: React.FC = () => {
                       <div className="step-circle step-2">
                         <div className="step-icon">⚙️</div>
                       </div>
-                      <h3 className="step-title">Diseño del<br/>Framework QA</h3>
+                      <h3 className="step-title">
+                        Diseño del
+                        <br />
+                        Framework QA
+                      </h3>
                       <div className="step-details">
                         <ul>
                           <li>Definición del marco TMAP</li>
@@ -116,7 +140,11 @@ const Methodology: React.FC = () => {
                       <div className="step-circle step-3">
                         <div className="step-icon">🚀</div>
                       </div>
-                      <h3 className="step-title">Implementación<br/>Piloto</h3>
+                      <h3 className="step-title">
+                        Implementación
+                        <br />
+                        Piloto
+                      </h3>
                       <div className="step-details">
                         <ul>
                           <li>Proyecto piloto</li>
@@ -130,7 +158,10 @@ const Methodology: React.FC = () => {
                       <div className="step-circle step-4">
                         <div className="step-icon">📈</div>
                       </div>
-                      <h3 className="step-title">Escalamiento<br/>y Optimización</h3>
+                      <h3 className="step-title">
+                        Escalamiento
+                        <br />y Optimización
+                      </h3>
                       <div className="step-details">
                         <ul>
                           <li>Expansión a más equipos y proyectos</li>
@@ -144,7 +175,11 @@ const Methodology: React.FC = () => {
                       <div className="step-circle step-5">
                         <div className="step-icon">🏆</div>
                       </div>
-                      <h3 className="step-title">Madurez<br/>Organizacional</h3>
+                      <h3 className="step-title">
+                        Madurez
+                        <br />
+                        Organizacional
+                      </h3>
                       <div className="step-details">
                         <ul>
                           <li>Monitoreo constante con KPIs de calidad</li>
@@ -154,7 +189,7 @@ const Methodology: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="roadmap-line">
                     <div className="line-progress"></div>
                     <div className="step-connector step-connector-1"></div>
